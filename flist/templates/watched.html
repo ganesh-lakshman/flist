@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block body %}
+
+<div id="watchedmovies">
+    {% for movie in movies %}
+    <div class="album-container">
+        <div class="album-item">
+            <img class="album-image" src="{{movie.imageurl}}">
+            <div class="album-info">
+              <h2>{{movie.title}}</h2>
+              <div class="author">{{movie.imdbid}}</div>
+              <input type="hidden" value={{movie.id}}>
+              {% if movie.notes == "" %}
+                <p class="info"><i>**YOUR NOTES GOES HERE**</i><p>
+                {% else %}
+                <p class="info">{{movie.notes}}<p>
+                {% endif %}
+                <button class="addnotes">ADD NOTES</button>
+                {% if movie.watched %}
+                <button class="removewatched" value={{movie.id}}>remove watched</button>
+                {% else %}
+                <button class="addtowatched" value={{movie.id}}>add to watched</button>
+                {% endif %}
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+</div>
+    
+{% endblock %}

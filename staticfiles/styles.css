@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap"); 
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+
+    }
+    75% {
+        opacity: 0;
+        height: 100%;
+        line-height: 100%;
+        padding: 20px;
+        margin-bottom: 10px;
+
+    }
+    100% {
+        opacity: 0;
+        height: 0px;
+        line-height: 0px;
+        padding: 0px;
+        margin-bottom: 0px;
+
+    }
+}
+.movie .album-container{
+    
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+body { background: rgb(255, 255, 255);
+    padding-bottom: 50px;
+    } 
+#movies li h2 { color: rgb(255, 255, 255); font-size: 1.8em; padding: 15px 10px 0; margin-top: auto; font-family: "Oswald", sans-serif };
+#movies { width: 100%; display: flex; flex-wrap: wrap; }
+#movies li { flex: 1; display: flex; flex-direction: column; align-items: center; list-style: none; margin: 10px; padding: 15px; border-radius: 12px; text-align: center; background: #272727; } 
+#movies li img { max-width: 300px; border-radius: 12px }; 
+
+
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 1rem;
+  font-family: "Arial", sans-serif;
+}
+
+p{
+  margin: 5px 0;
+}
+
+.album-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 1rem;
+}
+
+.album-item {
+  background: #ffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.album-image {
+  width: 100%;
+}
+
+.author {
+  font-size: 13px;
+  margin: 5px 0;
+  color: grey;
+}
+
+textarea {
+  width: 100%;
+}
