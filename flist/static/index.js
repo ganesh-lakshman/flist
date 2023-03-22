@@ -144,14 +144,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const list = data.d;
             delete list[0];
             list.map((item) => {
-                // console.log(item.id);
-                const movie = document.createElement('div');
+                // console.log(item.il)
+                if(item.id.slice(0,2) === 'tt' && item.i !== undefined)
+                {
+                    const movie = document.createElement('div');
                 movie.className = 'movie';
                 const name = item.l;
                 const poster = item.i.imageUrl;
                 const imdbid = item.id;
                 movie.innerHTML = `<li><img src = "${poster}"><h2>${name}</h2><h6>${imdbid}</h6><button class="add">${buttonvalue}</button></li>`;
-                document.querySelector('#movies').append(movie); 
+                document.querySelector('#movies').append(movie);
+                }
+                 
             })
         })
         .then(() => {
@@ -160,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const element = event.target;
                 if(element.className === 'add')
                 {
-                    // console.log((element.parentElement.parentElement.innerHTML));
+                    console.log((element.parentElement.parentElement.innerHTML));
                     const html = element.parentElement.parentElement.innerHTML;
 
                     const linkbegin = html.indexOf("https://");

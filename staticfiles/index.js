@@ -96,8 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'PUT'
             })
             .then(() => {
-                button.parentElement.parentElement.parentElement.remove();
-                console.log("sucess");
+                button.parentElement.parentElement.parentElement.style.animationPlayState = 'running';
+                button.parentElement.parentElement.parentElement.addEventListener('animationend', () => {
+                    button.parentElement.parentElement.parentElement.remove();
+                    })
+                // button.parentElement.parentElement.parentElement.remove();
+                // console.log("sucess");
             })
             .catch(err => console.error(err));
 

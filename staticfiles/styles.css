@@ -26,8 +26,14 @@
 
     }
 }
-.movie .album-container{
+.movie {
     
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+.album-item {
     animation-name: hide;
     animation-duration: 2s;
     animation-fill-mode: forwards;
